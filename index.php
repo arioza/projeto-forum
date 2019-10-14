@@ -1,3 +1,4 @@
+<?php include("bd/conexaobd.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <section class="login-block">
+    <section class="login-block" style="height: 100%">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 login-sec">
