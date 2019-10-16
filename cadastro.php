@@ -110,13 +110,13 @@ include('verifica_login.php');
 						<div class="col-md-6">
 							<label>Cidade</label>
 							<div>
-								<input name="cidade" class="form-control" type="text" id="cidade" disabled>
+								<input name="cidade" class="form-control" type="text" id="cidade">
 							</div>
 						</div>
 						<div class="col-md-2">
 							<label>Estado</label>
 							<div>
-								<input name="estado" class="form-control" type="text" id="uf" disabled>
+								<input name="estado" class="form-control" type="text" id="uf">
 							</div>
 						</div>
 					</div>																	
