@@ -11,6 +11,7 @@ session_start();
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
 	<link rel="stylesheet" type="text/css" href="css/style.css">    
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="https://kit.fontawesome.com/19ae817b2a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@ session_start();
 				if(isset($_SESSION['nao_autenticado'])):
 					?>
 					<div class="notification is-danger">
-						<p>ERRO: Usuário ou senha inválidos.</p>
+						<p style="text-align: center; color: red">Usuário ou senha inválidos.</p>
 					</div>
 					<?php
 				endif;
@@ -35,24 +36,24 @@ session_start();
 				?> 
 
 				<form action="login.php" method="POST">     
-					<label>Usuário</label>                          
+					<label><i class="fas fa-user"></i> Usuário</label>                          
 					<input name="usuario" class="form-control" autofocus="">                
 				</br>            
-				<label>Senha</label>                     
+				<label><i class="fas fa-unlock-alt"></i> Senha</label>                     
 				<input name="senha" class="form-control" type="password">            			    
 				<div class="row">
 					<div class="col-md-4 offset-md-4" style="padding-top: 20px">
-						<button type="submit" class="btn btn-dark">Entrar</button>                
+						<button type="submit" class="btn btn-dark" style="width: 100px; margin-left: -15px">    Entrar</button>                
 						<div style="padding-top: 10px; margin-left: -10px">
 							<a href="cadastro.php" class="btn-link">Cadastre-se</a>
 						</div>            
 					</div>
 				</div>
-
-			</form> 
-		</div>
+			</form>
+		</form> 
 	</div>
 </div>
+
 
 
 
