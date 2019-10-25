@@ -8,6 +8,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Login - Fórum</title>
+	<link rel="shortcut icon" href="images/icon.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
 	<link rel="stylesheet" type="text/css" href="css/style.css">    
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -15,10 +16,11 @@ session_start();
 </head>
 
 <body>
-	<div class="container" style="margin-top: 7%">
+	<div class="container" style="margin-top: 4%">
 		<div class="row">
-			<div class="col-md-2 offset-md-5" style="margin-bottom: 20px; padding-left: 45px">
-				<h2>Login</h2>
+			<div class="col-md-2 offset-md-5" style="margin-bottom: 10px;">
+				<img src="images/icon.png">
+				<h2 style=" padding-left: 45px">Login</h2>
 			</div>
 		</div>
 		<div class="row">

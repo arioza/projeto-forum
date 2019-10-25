@@ -7,6 +7,7 @@ session_start();
 <head>
 	<meta charset="utf8">
 	<title>Cadastro - Fórum</title>
+	<link rel="shortcut icon" href="images/icon.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
 	<link rel="stylesheet" type="text/css" href="css/style.css">    
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -88,10 +89,11 @@ session_start();
 
 </head>
 <body>
-	<div class="container" style="margin-top: 7%">
+	<div class="container" style="margin-top: 4%">
 		<div class="row">
 			<div class="col-md-2 offset-md-5" style="margin-bottom: 20px">
-				<h2>Cadastro</h2>
+				<img src="images/icon.png">
+				<h2 style=" padding-left: 15px">Cadastro</h2>
 			</div>
 		</div>
 		<form action="cadastraUsuario.php" method="POST">
