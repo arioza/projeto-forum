@@ -13,10 +13,19 @@ include('verifica_login.php');
 		function dev(){
 			alert("Botão em desenvolvimento!");
 		}
+		function change(iconID){
+			if(document.getElementById(iconID).className=="btn btn-outline-success far fa-thumbs-up"){
+				document.getElementById(iconID).className = "btn btn-outline-danger far fa-thumbs-down";
+				document.getElementById(iconID).innerHTML=" Dislike";
+			}else{
+				document.getElementById(iconID).className = "btn btn-outline-success far fa-thumbs-up";
+				document.getElementById(iconID).innerHTML=" Like";
+			}
+		}
 	</script>
 </head>
 <body>
-	<div style="width: 100%; height: 100%">
+	<div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12" style="margin-top: 30px;">
@@ -31,13 +40,10 @@ include('verifica_login.php');
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>
 						</li>
-						<li class="nav-item" style="width: 17%; text-align: center;">
+						<li class="nav-item" style="width: 27%; text-align: center;">
 							<a class="nav-link btn-outline-primary" href="painel.php"><i class="fas fa-home"></i> Home</a>
 						</li>
-						<li class="nav-item" style="width: 19%; text-align: center;">
-							<a class="nav-link btn-outline-primary" href="#" href="" onclick="dev()"><i class="fas fa-bookmark"></i> Categorias</a>
-						</li>
-						<li class="nav-item" style="width: 19%; text-align: center;">
+						<li class="nav-item" style="width: 28%; text-align: center;">
 							<a class="nav-link btn-outline-primary" href="#" href="" onclick="dev()"><i class="fas fa-poll"></i> Trend Topics</a>
 						</li>
 						<form class="form-inline my-2 my-lg-0" style="width: 25%;">
@@ -53,35 +59,34 @@ include('verifica_login.php');
 					<hr style="width: 60%; margin-top: -0px">
 				</div>
 				<div class="col-md-7">
-					<h6>Fóruns</h6>
+					<h6>Categorias</h6>
 					<hr style="width: 50%; margin-top: -0px">
-					<a class="dropdown-item" data-toggle="modal" data-target="#tecnologia" href="foruns/tecnologia.php">Fórum Tecnologia</a>
+					<div style="margin-top: 30px;">
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#tecnologia" href="foruns/tecnologia.php">Fórum Tecnologia</a>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon1" onclick="change('icon1')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+					</div>
+					<div style="margin-top: 30px">
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#religiao" href="foruns/tecnologia.php">Fórum Religião</a>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon2" onclick="change('icon2')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+					</div>
+					<div style="margin-top: 30px">
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#politica" href="foruns/tecnologia.php">Fórum Política</a>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+					</div>
 				</div>
 				<div class="col-md-2" style="border-left: solid 1px #DEE1E6">
 					<h6>Google Ads</h6>
 					<hr style="width: 60%; margin-top: -0px">
 					<div style="width: 100%; border-style: solid 1px">
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
-						<p style="font-size: 12px">Área para propaganda</p>
+						
 					</div>
 				</div>
 			</div>
-			<hr>
-			<p style="text-align: right; color: #A0A0A0; margin-right: 10px; margin-top: -8px">Developed by Students of Estácio de Sá</p>
+			
 		</div>
 	</div>
 
-<!--Inicio Modal Sair -->
+	<!--Inicio Modal Sair -->
 	<div class="modal fade" id="sair" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -95,9 +100,9 @@ include('verifica_login.php');
 			</div>
 		</div>
 	</div>
-<!--Fim Modal-->
+	<!--Fim Modal-->
 
-<!--Inicio Modal Fórum Tecnologia -->
+	<!--Inicio Modal Fórum Tecnologia -->
 	<div class="modal fade" id="tecnologia" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -108,14 +113,59 @@ include('verifica_login.php');
 					<p style="text-align: justify; padding-top: 5px">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre tecnologia.</p>
 					<p style="text-align: justify;">Tecnologia é um termo que envolve o conhecimento técnico e científico e a aplicação deste conhecimento através de sua transformação no uso de ferramentas, processos e materiais criados e utilizados a partir de tal conhecimento</p>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				<div class="modal-footer">					
 					<button type="button" class="btn btn-primary"><a href="foruns/tecnologia.php" style="color: white">Acessar</a></button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 				</div>
 			</div>
 		</div>
 	</div>
-<!--Fim Modal-->
+	<!--Fim Modal-->
+
+	<!--Inicio Modal Fórum Religião -->
+	<div class="modal fade" id="religiao" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="TituloModalCentralizado">Religião</h5>
+				</div>
+				<div class="modal-content">
+					<p style="text-align: justify; padding-top: 5px">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre religião.</p>
+					<p style="text-align: justify;">Religião é um conjunto de sistemas culturais e de crenças, além de visões de mundo, que estabelece os símbolos que relacionam a humanidade com a espiritualidade e seus próprios valores morais. Muitas religiões têm narrativas, símbolos, tradições e histórias sagradas que se destinam a dar sentido à vida ou explicar a sua origem e do universo. As religiões tendem a derivar a moralidade, a ética, as leis religiosas ou um estilo de vida preferido de suas ideias sobre o cosmos e a natureza humana.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><a href="foruns/religiao.php" style="color: white">Acessar</a></button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Fim Modal-->
+
+	<!--Inicio Modal Fórum Política -->
+	<div class="modal fade" id="politica" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="TituloModalCentralizado">Política</h5>
+				</div>
+				<div class="modal-content">
+					<p style="text-align: justify; padding-top: 5px">O Fórum de Política é destinado a tratar assuntos especificamentes sobre política.</p>
+					<p style="text-align: justify;">Política denomina-se a arte ou ciência da organização, direção e administração de nações ou Estados; a aplicação desta ciência aos assuntos internos da nação (política interna) ou aos assuntos externos (política externa).[3] Nos regimes democráticos, a ciência política é a atividade dos cidadãos que se ocupam dos assuntos públicos com seu voto ou com sua militância.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><a href="foruns/politica.php" style="color: white">Acessar</a></button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Fim Modal-->
+
+	<footer>
+		<hr style="width: 90%">
+		<p style="text-align: right; color: #A0A0A0; margin-right: 5%;">Developed by Students of <a style="color: #A0A0A0;" target="_blank" href="http://portal.estacio.br/">Estácio de Sá</a></p>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
