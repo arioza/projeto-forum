@@ -13,6 +13,7 @@ include('verifica_login.php');
 		function dev(){
 			alert("Botão em desenvolvimento!");
 		}
+
 		function change(iconID){
 			if(document.getElementById(iconID).className=="btn btn-outline-success far fa-thumbs-up"){
 				document.getElementById(iconID).className = "btn btn-outline-danger far fa-thumbs-down";
@@ -27,10 +28,28 @@ include('verifica_login.php');
 <body>
 	<div>
 		<div class="container">
+			<div class="row" style="margin-top: 5px;">
+				<div class="col-md-4">									
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-md-4">
+							<a href="painel.php">
+								<img src="images/logo-painel.png">		
+							</a>
+						</div>
+						<div class="col-md-8" style="margin-top: 30px; padding-left: 0px">
+							<h3>Fórum</h3>
+						</div>
+					</div>									
+				</div>
+				<div class="col-md-8">				
+					<img src="images/banner-top.jpg">				
+				</div>
+				<hr>
+			</div>
 			<div class="row">
-				<div class="col-md-12" style="margin-top: 30px;">
+				<div class="col-md-12" style="margin-top: 10px;">
 					<ul class="nav nav-tabs">
-						<li class="nav-item dropdown" style="width: 20%; text-align: center;">
+						<li class="nav-item dropdown" style="width: 25%; text-align: center;">
 							<a class="nav-link dropdown-toggle btn-outline-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								Olá, <h7 style="text-transform: uppercase;"><?php echo $_SESSION['usuario'];?></h7>							
 							</a>
@@ -40,14 +59,14 @@ include('verifica_login.php');
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>
 						</li>
-						<li class="nav-item" style="width: 27%; text-align: center;">
+						<li class="nav-item" style="width: 25%; text-align: center;">
 							<a class="nav-link btn-outline-primary" href="painel.php"><i class="fas fa-home"></i> Home</a>
 						</li>
-						<li class="nav-item" style="width: 28%; text-align: center;">
+						<li class="nav-item" style="width: 25%; text-align: center;">
 							<a class="nav-link btn-outline-primary" href="#" href="" onclick="dev()"><i class="fas fa-poll"></i> Trend Topics</a>
 						</li>
-						<form class="form-inline my-2 my-lg-0" style="width: 25%;">
-							<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar fóruns" aria-label="Pesquisar">
+						<form class="form-inline my-2 my-lg-0" style="width: 25%; padding-left: 5px">
+							<input style="width: 80%" class="form-control mr-sm-2" type="search" placeholder="Pesquisar fóruns" aria-label="Pesquisar" onclick="dev()">
 							<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"  onclick="dev()"></i></button>
 						</form>
 					</ul>				
@@ -55,31 +74,30 @@ include('verifica_login.php');
 			</div>
 			<div class="row" style="text-align: center; margin-top: 10px;">
 				<div class="col-md-3" style="border-right: solid 1px #DEE1E6;">
-					<h6>Match</a></a></h6>
+					<h6>Match</h6>
 					<hr style="width: 60%; margin-top: -0px">
 				</div>
 				<div class="col-md-7">
 					<h6>Categorias</h6>
 					<hr style="width: 50%; margin-top: -0px">
 					<div style="margin-top: 30px;">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#tecnologia" href="foruns/tecnologia.php">Fórum Tecnologia</a>
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#tecnologia">Tecnologia</a>
 						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon1" onclick="change('icon1')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#religiao" href="foruns/tecnologia.php">Fórum Religião</a>
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#religiao">Religião</a>
 						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon2" onclick="change('icon2')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#politica" href="foruns/tecnologia.php">Fórum Política</a>
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#politica">Política</a>
 						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 				</div>
 				<div class="col-md-2" style="border-left: solid 1px #DEE1E6">
 					<h6>Google Ads</h6>
-					<hr style="width: 60%; margin-top: -0px">
-					<div style="width: 100%; border-style: solid 1px">
-						
-					</div>
+					<hr style="width: 60%; margin-top: -0px">															
+					<a href="https://www.netflix.com" target="_blank"><img style="width: 100%; margin: 15px 0px 15px 0px" src="https://i.pinimg.com/originals/17/50/07/17500708fecc58c74468cd7953284527.jpg"></a>
+					
 				</div>
 			</div>
 			
@@ -109,9 +127,9 @@ include('verifica_login.php');
 				<div class="modal-header">
 					<h5 class="modal-title" id="TituloModalCentralizado">Tecnologia</h5>
 				</div>
-				<div class="modal-content">
-					<p style="text-align: justify; padding-top: 5px">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre tecnologia.</p>
+				<div class="modal-content" style=" padding: 15px 15px 5px 15px">				
 					<p style="text-align: justify;">Tecnologia é um termo que envolve o conhecimento técnico e científico e a aplicação deste conhecimento através de sua transformação no uso de ferramentas, processos e materiais criados e utilizados a partir de tal conhecimento</p>
+					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre tecnologia.</p>
 				</div>
 				<div class="modal-footer">					
 					<button type="button" class="btn btn-primary"><a href="foruns/tecnologia.php" style="color: white">Acessar</a></button>
@@ -129,9 +147,9 @@ include('verifica_login.php');
 				<div class="modal-header">
 					<h5 class="modal-title" id="TituloModalCentralizado">Religião</h5>
 				</div>
-				<div class="modal-content">
-					<p style="text-align: justify; padding-top: 5px">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre religião.</p>
+				<div class="modal-content" style=" padding: 15px 15px 5px 15px">				
 					<p style="text-align: justify;">Religião é um conjunto de sistemas culturais e de crenças, além de visões de mundo, que estabelece os símbolos que relacionam a humanidade com a espiritualidade e seus próprios valores morais. Muitas religiões têm narrativas, símbolos, tradições e histórias sagradas que se destinam a dar sentido à vida ou explicar a sua origem e do universo. As religiões tendem a derivar a moralidade, a ética, as leis religiosas ou um estilo de vida preferido de suas ideias sobre o cosmos e a natureza humana.</p>
+					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre religião.</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary"><a href="foruns/religiao.php" style="color: white">Acessar</a></button>
@@ -149,9 +167,9 @@ include('verifica_login.php');
 				<div class="modal-header">
 					<h5 class="modal-title" id="TituloModalCentralizado">Política</h5>
 				</div>
-				<div class="modal-content">
-					<p style="text-align: justify; padding-top: 5px">O Fórum de Política é destinado a tratar assuntos especificamentes sobre política.</p>
-					<p style="text-align: justify;">Política denomina-se a arte ou ciência da organização, direção e administração de nações ou Estados; a aplicação desta ciência aos assuntos internos da nação (política interna) ou aos assuntos externos (política externa).[3] Nos regimes democráticos, a ciência política é a atividade dos cidadãos que se ocupam dos assuntos públicos com seu voto ou com sua militância.</p>
+				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
+					<p style="text-align: justify;">Política denomina-se a arte ou ciência da organização, direção e administração de nações ou Estados; a aplicação desta ciência aos assuntos internos da nação (política interna) ou aos assuntos externos (política externa). Nos regimes democráticos, a ciência política é a atividade dos cidadãos que se ocupam dos assuntos públicos com seu voto ou com sua militância.</p>
+					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Política é destinado a tratar assuntos especificamentes sobre política.</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary"><a href="foruns/politica.php" style="color: white">Acessar</a></button>
