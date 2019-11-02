@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Política - Fórum</title>
+	<title>Esporte - Fórum</title>
 	<link rel="shortcut icon" href="../images/icon.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/19ae817b2a.js" crossorigin="anonymous"></script>
@@ -62,7 +62,7 @@
 			</div>
 			<div class="row" style="margin-top: 10px;">
 				<div class="col-md-10" style="border-right: solid 1px #DEE1E6;">						
-					<h1 style="text-align: center">Política</h1>		
+					<h1 style="text-align: center">Esporte</h1>		
 
 					<div>
 						<a href="#" style="text-align: left; color: black; font-weight: bold"><i class="fas fa-user-circle"></i> BELLAN</a>

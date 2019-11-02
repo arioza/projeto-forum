@@ -18,6 +18,7 @@ include('verifica_login.php');
 			if(document.getElementById(iconID).className=="btn btn-outline-success far fa-thumbs-up"){
 				document.getElementById(iconID).className = "btn btn-outline-danger far fa-thumbs-down";
 				document.getElementById(iconID).innerHTML=" Dislike";
+				alert("O Match com este fórum depende da aprovação do administrador do fórum.")
 			}else{
 				document.getElementById(iconID).className = "btn btn-outline-success far fa-thumbs-up";
 				document.getElementById(iconID).innerHTML=" Like";
@@ -42,7 +43,7 @@ include('verifica_login.php');
 					</div>									
 				</div>
 				<div class="col-md-8">				
-					<img src="images/banner-top.jpg">				
+					<a href="https://apple.com" target="_blank"><img src="images/banner-top.jpg"></a>
 				</div>
 				<hr>
 			</div>
@@ -67,7 +68,7 @@ include('verifica_login.php');
 						</li>
 						<form class="form-inline my-2 my-lg-0" style="width: 25%; padding-left: 5px">
 							<input style="width: 80%" class="form-control mr-sm-2" type="search" placeholder="Pesquisar fóruns" aria-label="Pesquisar" onclick="dev()">
-							<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"  onclick="dev()"></i></button>
+							<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="dev()"><i class="fas fa-search"></i></button>
 						</form>
 					</ul>				
 				</div>
@@ -91,6 +92,14 @@ include('verifica_login.php');
 					<div style="margin-top: 30px">
 						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#politica">Política</a>
 						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+					</div>
+					<div style="margin-top: 30px">
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#esporte">Esporte</a>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon4" onclick="change('icon4')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+					</div>
+					<div style="margin-top: 30px">
+						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#carro">Carro</a>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon5" onclick="change('icon5')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 				</div>
 				<div class="col-md-2" style="border-left: solid 1px #DEE1E6">
@@ -173,6 +182,46 @@ include('verifica_login.php');
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary"><a href="foruns/politica.php" style="color: white">Acessar</a></button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Fim Modal-->
+
+		<!--Inicio Modal Fórum Esporte -->
+	<div class="modal fade" id="esporte" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="TituloModalCentralizado">Esporte</h5>
+				</div>
+				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
+					<p style="text-align: justify;">Esporte é toda a forma de praticar atividade física, de forma metódica, com objetivos competitivos, que por meio de participação casual ou organizada, procure usar, manter ou melhorar as habilidades físicas, proporcionando diversão aos participantes e, em alguns casos, entretenimento para os espectadores.</p>
+					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Esporte é destinado a tratar assuntos especificamentes sobre esporte.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><a href="foruns/esporte.php" style="color: white">Acessar</a></button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Fim Modal-->
+
+		<!--Inicio Modal Fórum Carro -->
+	<div class="modal fade" id="carro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="TituloModalCentralizado">Carros</h5>
+				</div>
+				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
+					<p style="text-align: justify;">Automóvel (do grego αὐτός ["autós"], "por si próprio", e do latim mobilis, "mobilidade", como referência a um objecto responsável pela sua própria locomoção) ou carro (das línguas celtas, através do latim carru) é um veículo motorizado com rodas usado para transporte. A maioria das definições de carro diz que eles correm basicamente em estradas, acomodam de uma a oito pessoas, têm quatro pneus e, principalmente, transportam pessoas em vez de mercadorias.</p>
+					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Carros é destinado a tratar assuntos especificamentes sobre carros.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><a href="foruns/carro.php" style="color: white">Acessar</a></button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 				</div>
 			</div>
