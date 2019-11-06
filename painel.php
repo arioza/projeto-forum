@@ -1,5 +1,5 @@
 <?php
-include('verifica_login.php');
+include('_verificaLogin.php');
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ include('verifica_login.php');
 								Olá, <h7 style="text-transform: uppercase;"><?php echo $_SESSION['usuario'];?></h7>							
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-user"></i> Editar Perfil</a>
+								<a class="dropdown-item" href="atualizaUsuario.php"><i class="fas fa-user"></i> Editar Perfil</a>
 								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-book-reader"></i> Meus Forúns</a>
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>

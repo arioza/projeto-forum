@@ -15,12 +15,11 @@ $query = "select usuario from usuarios where usuario = '{$usuario}'";
 $result = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($result);
 
-if($row == 0) {
-	$query = "INSERT INTO `usuarios` (`nome`,`usuario`,`senha`,`cidade`,`estado`,`cep`,`datanasc`,`sexo`,`email`) 
-	VALUES ('{$nome}','{$usuario}','{$senha}','{$cidade}','{$estado}','{$cep}','{$datanasc}','{$sexo}','{$email}')";
-	mysqli_query($conexao, $query) or die ("Erro ao tentar cadastrar");
-	header('Location: index.php');
+if($row > 0) {
+	$query = "update `usuarios` set `nome` = '{$nome}', `senha` = '{$senha}',`cidade` = '{$cidade}',`estado`  = '{$estado}',`cep` = '{$cep}',`datanasc` = '{$datanasc}',`sexo` = '{$sexo}',`email` = '{$email}'";
+	mysqli_query($conexao, $query) or die ("Erro ao tentar atualizar");
+	echo"<script>alert('Usuário atualizado com sucesso!'); window.location='atualizaUsuario.php';</script>";
 	exit();
 } else {
-	echo"erro";
+	echo"<script>alert('Erro ao atualizar usuário!'); window.location='atualizaUsuario.php';</script>";
 }

@@ -96,11 +96,11 @@ session_start();
 				<h2 style=" padding-left: 15px">Cadastro</h2>
 			</div>
 		</div>
-		<form action="cadastraUsuario.php" method="POST">
+		<form action="_cadastraUsuario.php" method="POST">
 			<div class="row">
 				<div class="col-md-6">
 					<label>Nome</label>
-					<input name="nome" type="text" class="form-control" required>
+					<input name="nome" type="text" class="form-control" autofocus required>
 					<label>Usuário</label>
 					<input name="usuario" type="text" class="form-control" required>
 
@@ -139,13 +139,13 @@ session_start();
 					<div class="row">
 						<div class="col-md-6">
 							<label>Data de Nascimento</label>
-							<input name="datanasc" type="date" class="form-control">
+							<input name="datanasc" type="date" class="form-control" required>
 						</div>
 						<div class="col-md-6" style="">
 							<div>
 								<label>Sexo</label>
 							</div>
-							<select name="sexo" style="height: 37px; width: 254px">
+							<select name="sexo" style="height: 37px; width: 254px" required>
 								<option>-</option>
 								<option value="M">Masculino</option>
 								<option value="F">Feminino</option>
@@ -153,7 +153,7 @@ session_start();
 						</div>
 					</div>
 					<label>E-mail</label>
-					<input name="email" type="email" class="form-control">
+					<input name="email" type="email" class="form-control" required>
 				</div>
 			</div>	
 

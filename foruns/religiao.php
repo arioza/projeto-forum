@@ -1,4 +1,6 @@
-
+<?php
+include('../_verificaLogin.php');
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,10 +41,10 @@
 					<ul class="nav nav-tabs">
 						<li class="nav-item dropdown" style="width: 25%; text-align: center;">
 							<a class="nav-link dropdown-toggle btn-outline-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<h7>Menu</h7>							
+								Olá, <h7 style="text-transform: uppercase;"><?php echo $_SESSION['usuario'];?></h7>							
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-user"></i> Editar Perfil</a>
+								<a class="dropdown-item" href="../atualizaUsuario.php"><i class="fas fa-user"></i> Editar Perfil</a>
 								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-book-reader"></i> Meus Forúns</a>
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>
