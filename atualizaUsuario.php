@@ -26,9 +26,7 @@ while($exibe = mysqli_fetch_assoc($sql)){
 	<script type="text/javascript">
 		function dev(){
 			alert("Botão em desenvolvimento!");
-		}
-
-		<script type="text/javascript" >
+		}		
 
 		function limpa_formulário_cep() {                
 			document.getElementById('cidade').value=("");
@@ -136,7 +134,8 @@ while($exibe = mysqli_fetch_assoc($sql)){
 			</div>
 			<div class="row" style="text-align: center; margin-top: 10px;">
 				<div class="col-md-10" style="border-right: solid 1px #DEE1E6;">
-					<h6>Atualizar Cadastro</h6>
+					<h4>Atualizar Cadastro</h4>
+					<hr style="width: 30%; margin-top: -0px">
 					<form action="_atualizaUsuario.php" method="POST">
 						<div class="row">
 							<div class="col-md-6">

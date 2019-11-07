@@ -82,24 +82,24 @@ include('_verificaLogin.php');
 					<h6>Categorias</h6>
 					<hr style="width: 50%; margin-top: -0px">
 					<div style="margin-top: 30px;">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#tecnologia">Tecnologia</a>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon1" onclick="change('icon1')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#tecnologia">Tecnologia</button>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px; width: 110px" id="icon1" onclick="change('icon1')" class="btn btn-outline-success far fa-thumbs-up">  Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#religiao">Religião</a>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon2" onclick="change('icon2')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#religiao">Religião</button>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon2" onclick="change('icon2')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#politica">Política</a>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#politica">Política</button>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#esporte">Esporte</a>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon4" onclick="change('icon4')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#esporte">Esporte</button>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon4" onclick="change('icon4')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 					<div style="margin-top: 30px">
-						<a style="width: 80%" class="btn btn-outline-secondary" data-toggle="modal" data-target="#carro">Carro</a>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px" id="icon5" onclick="change('icon5')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
+						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#carro">Carro</button>
+						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon5" onclick="change('icon5')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
 					</div>
 				</div>
 				<div class="col-md-2" style="border-left: solid 1px #DEE1E6">
