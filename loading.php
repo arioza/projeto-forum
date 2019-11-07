@@ -1,3 +1,49 @@
+<?php
+if($_GET["acao"] == "cadastro-sucesso"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/sucess.jpg";
+	$texto1 = "Cadastrando Usuário";
+	$texto2 = "Usuário Cadastrado com Sucesso!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "index.php";
+}else if($_GET["acao"] == "cadastro-erro"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/error.jpg";
+	$texto1 = "Cadastrando Usuário";
+	$texto2 = "Erro ao cadastrar!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "cadastro.php";
+}else if($_GET["acao"] == "atualiza-sucesso"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/sucess.jpg";
+	$texto1 = "Atualizando Cadastro";
+	$texto2 = "Cadastro Atualizado com Sucesso!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "atualizaUsuario.php";
+}else if($_GET["acao"] == "atualiza-erro"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/error.jpg";
+	$texto1 = "Atualizando Usuário";
+	$texto2 = "Erro ao Atualizar!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "atualizaUsuario.php";
+}else if($_GET["acao"] == "exclui-sucesso"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/sucess.jpg";
+	$texto1 = "Excluindo Usuário";
+	$texto2 = "Usuário Excluído com Sucesso!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "index.php";
+}else if($_GET["acao"] == "exclui-erro"){
+	$imagem1 = "images/gif-loading.gif";
+	$imagem2 = "images/error.jpg";
+	$texto1 = "Excluindo Usuário";
+	$texto2 = "Erro ao Excluir Usuário!";
+	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
+	$redirect = "atualizaUsuario.php";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,13 +56,22 @@
 </head>
 <body>
 	<div class="row">
-		<div class="col-md-4 offset-md-4" style="margin-top: 15%; text-align: center">
-			<img src='images/gif-loading.gif' />			
-		<h4>Excluindo Usuário<img  style="padding-top: 10px" src='images/dot-loading.gif' /></h4>		
-		<script type='text/JavaScript'>
-		setTimeout(function () {							
-			alert('Usuário excluído com sucesso!');
-			}, 1000); 
+		<div class="col-md-4 offset-md-4" style="margin-top: 13%; text-align: center">
+			<img id="imagem1" src='<?php echo $imagem1?>' />			
+			<h4 id="texto" ><?php echo $texto1?><img style="padding-top: 10px" src='images/dot-loading.gif' /></h4>		
+			<script type='text/JavaScript'>
+				setTimeout(function () {							
+					document.getElementById('imagem1').src='<?php echo $imagem2?>';
+					document.getElementById("texto").innerHTML="<?php echo $texto2?>";
+					setTimeout(function () {							
+						document.getElementById('imagem1').src='<?php echo $imagem1?>';
+						document.getElementById("texto").innerHTML="<?php echo $texto3?>";
+						setTimeout(function () {							
+							window.location='<?php echo $redirect?>';
+						}, 1000);
+					}, 2000); 
+				}, 2000); 
+
 			</script>
 		</div>
 	</div>
