@@ -9,28 +9,23 @@
 <body>
 	<?php	
 	include('conexao.php');
+	$id = mysqli_real_escape_string($conexao, $_POST['id']);
 	$nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-	$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-	$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-	$cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
-	$estado = mysqli_real_escape_string($conexao, $_POST['estado']);
-	$cep = mysqli_real_escape_string($conexao, $_POST['cep']);
-	$datanasc = mysqli_real_escape_string($conexao, $_POST['datanasc']);
-	$sexo = mysqli_real_escape_string($conexao, $_POST['sexo']);
-	$email = mysqli_real_escape_string($conexao, $_POST['email']);
+	$categoria = mysqli_real_escape_string($conexao, $_POST['categoria']);
+	$detalhe = mysqli_real_escape_string($conexao, $_POST['detalhe']);
 
-	$query = "select usuario from usuarios where usuario = '{$usuario}'";
+	$query = "select * from topicos where id = '{$id}'";
 	$result = mysqli_query($conexao, $query);
 	$row = mysqli_num_rows($result);
 
 	if($row > 0) {
-		$query = "update `usuarios` set `nome` = '{$nome}', `senha` = '{$senha}',`cidade` = '{$cidade}',`estado`  = '{$estado}',`cep` = '{$cep}',`datanasc` = '{$datanasc}',`sexo` = '{$sexo}',`email` = '{$email}' where usuario = '{$usuario}'";
-		mysqli_query($conexao, $query) or die ("<script>window.location='loading.php?acao=cadastro-erro';</script>");		
-		echo"<script>window.location='loading.php?acao=atualiza-sucesso';</script>";
+		$query = "update `topicos` set `nome` = '{$nome}', `categoria` = '{$categoria}',`detalhe` = '{$detalhe}' where id = '{$id}'";
+		mysqli_query($conexao, $query) or die ("<script>window.location='loading.php?acao=atualiza-topico-erro';</script>");		
+		echo"<script>window.location='loading.php?acao=atualiza-topico-sucesso';</script>";
 
 		exit();
 	} else {
-		echo "<script>window.location='loading.php?acao=atualiza-erro';</script>";
+		echo "<script>window.location='loading.php?acao=atualiza-topico-erro';</script>";
 	}
 	?>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -56,7 +56,7 @@ include('_verificaLogin.php');
 							</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="atualizaUsuario.php"><i class="fas fa-user"></i> Editar Perfil</a>
-								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-book-reader"></i> Meus Forúns</a>
+								<a class="dropdown-item" href="meusTopicos.php"><i class="fas fa-book-reader"></i> Meus Tópicos</a>
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>
 						</li>
@@ -81,26 +81,24 @@ include('_verificaLogin.php');
 				<div class="col-md-7">
 					<h6>Categorias</h6>
 					<hr style="width: 50%; margin-top: -0px">
-					<div style="margin-top: 30px;">
-						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#tecnologia">Tecnologia</button>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px; width: 110px" id="icon1" onclick="change('icon1')" class="btn btn-outline-success far fa-thumbs-up">  Like</i>
-					</div>
-					<div style="margin-top: 30px">
-						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#religiao">Religião</button>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon2" onclick="change('icon2')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
-					</div>
-					<div style="margin-top: 30px">
-						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#politica">Política</button>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon3" onclick="change('icon3')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
-					</div>
-					<div style="margin-top: 30px">
-						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#esporte">Esporte</button>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon4" onclick="change('icon4')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
-					</div>
-					<div style="margin-top: 30px">
-						<button style="width: 80%" class="btn btn-outline-dark" data-toggle="modal" data-target="#carro">Carro</button>
-						<i style="margin-left: 10px; height: 40px; padding-top: 10px;  width: 110px" id="icon5" onclick="change('icon5')" class="btn btn-outline-success far fa-thumbs-up"> Like</i>
-					</div>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Tecnologia" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Tecnologia</button>
+					</form>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Política" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Política</button>
+					</form>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Esporte" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Esporte</button>
+					</form>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Ciência" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Ciência</button>
+					</form>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Religião" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Religião</button>
+					</form>
+					<form action="categoriaTopicos.php" method="POST">
+						<button type="submit" name="categoria" value="Automóveis" class="btn btn-outline-primary" style="width: 100%; margin-top: 20px">Automóveis</button>
+					</form>
 				</div>
 				<div class="col-md-2" style="border-left: solid 1px #DEE1E6">
 					<h6>Google Ads</h6>
@@ -123,106 +121,6 @@ include('_verificaLogin.php');
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					<button type="button" class="btn btn-primary"><a href="logout.php" style="color: white">Sair</a></button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Fim Modal-->
-
-	<!--Inicio Modal Fórum Tecnologia -->
-	<div class="modal fade" id="tecnologia" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado">Tecnologia</h5>
-				</div>
-				<div class="modal-content" style=" padding: 15px 15px 5px 15px">				
-					<p style="text-align: justify;">Tecnologia é um termo que envolve o conhecimento técnico e científico e a aplicação deste conhecimento através de sua transformação no uso de ferramentas, processos e materiais criados e utilizados a partir de tal conhecimento</p>
-					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre tecnologia.</p>
-				</div>
-				<div class="modal-footer">					
-					<button type="button" class="btn btn-primary"><a href="foruns/tecnologia.php" style="color: white">Acessar</a></button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Fim Modal-->
-
-	<!--Inicio Modal Fórum Religião -->
-	<div class="modal fade" id="religiao" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado">Religião</h5>
-				</div>
-				<div class="modal-content" style=" padding: 15px 15px 5px 15px">				
-					<p style="text-align: justify;">Religião é um conjunto de sistemas culturais e de crenças, além de visões de mundo, que estabelece os símbolos que relacionam a humanidade com a espiritualidade e seus próprios valores morais. Muitas religiões têm narrativas, símbolos, tradições e histórias sagradas que se destinam a dar sentido à vida ou explicar a sua origem e do universo. As religiões tendem a derivar a moralidade, a ética, as leis religiosas ou um estilo de vida preferido de suas ideias sobre o cosmos e a natureza humana.</p>
-					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Tecnologia é destinado a tratar assuntos especificamentes sobre religião.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><a href="foruns/religiao.php" style="color: white">Acessar</a></button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Fim Modal-->
-
-	<!--Inicio Modal Fórum Política -->
-	<div class="modal fade" id="politica" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado">Política</h5>
-				</div>
-				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
-					<p style="text-align: justify;">Política denomina-se a arte ou ciência da organização, direção e administração de nações ou Estados; a aplicação desta ciência aos assuntos internos da nação (política interna) ou aos assuntos externos (política externa). Nos regimes democráticos, a ciência política é a atividade dos cidadãos que se ocupam dos assuntos públicos com seu voto ou com sua militância.</p>
-					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Política é destinado a tratar assuntos especificamentes sobre política.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><a href="foruns/politica.php" style="color: white">Acessar</a></button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Fim Modal-->
-
-		<!--Inicio Modal Fórum Esporte -->
-	<div class="modal fade" id="esporte" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado">Esporte</h5>
-				</div>
-				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
-					<p style="text-align: justify;">Esporte é toda a forma de praticar atividade física, de forma metódica, com objetivos competitivos, que por meio de participação casual ou organizada, procure usar, manter ou melhorar as habilidades físicas, proporcionando diversão aos participantes e, em alguns casos, entretenimento para os espectadores.</p>
-					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Esporte é destinado a tratar assuntos especificamentes sobre esporte.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><a href="foruns/esporte.php" style="color: white">Acessar</a></button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Fim Modal-->
-
-		<!--Inicio Modal Fórum Carro -->
-	<div class="modal fade" id="carro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado">Carros</h5>
-				</div>
-				<div class="modal-content" style=" padding: 15px 15px 5px 15px">					
-					<p style="text-align: justify;">Automóvel (do grego αὐτός ["autós"], "por si próprio", e do latim mobilis, "mobilidade", como referência a um objecto responsável pela sua própria locomoção) ou carro (das línguas celtas, através do latim carru) é um veículo motorizado com rodas usado para transporte. A maioria das definições de carro diz que eles correm basicamente em estradas, acomodam de uma a oito pessoas, têm quatro pneus e, principalmente, transportam pessoas em vez de mercadorias.</p>
-					<p style="font-weight: bold; font-size: 10px; color: #A0A0A0;; text-align: center;">O Fórum de Carros é destinado a tratar assuntos especificamentes sobre carros.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><a href="foruns/carro.php" style="color: white">Acessar</a></button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 				</div>
 			</div>
 		</div>

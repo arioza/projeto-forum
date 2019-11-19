@@ -114,8 +114,8 @@ while($exibe = mysqli_fetch_assoc($sql)){
 								Olá, <h7 style="text-transform: uppercase;"><?php echo $_SESSION['usuario'];?></h7>							
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-user"></i> Editar Perfil</a>
-								<a class="dropdown-item" href="" onclick="dev()"><i class="fas fa-book-reader"></i> Meus Forúns</a>
+								<a class="dropdown-item" href="atualizaUsuario.php"><i class="fas fa-user"></i> Editar Perfil</a>
+								<a class="dropdown-item" href="meusTopicos.php"><i class="fas fa-book-reader"></i> Meus Forúns</a>
 								<a class="dropdown-item" data-toggle="modal" data-target="#sair"><i class="fas fa-door-open"></i> Sair</a>
 							</div>
 						</li>

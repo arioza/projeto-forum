@@ -1,46 +1,91 @@
-<?php
+<?php	
+$loading = "Carregando parametros";
+$access = "Acessando banco de dados";
+$gifLoading = "images/loading.gif";
+$redirecting = "Redirecionando";
+
 if($_GET["acao"] == "cadastro-sucesso"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/sucess.jpg";
+	$img = "images/success.png";
 	$texto1 = "Cadastrando Usuário";
-	$texto2 = "Usuário Cadastrado com Sucesso!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "index.php";
-}else if($_GET["acao"] == "cadastro-erro"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/error.jpg";
+}
+
+else if($_GET["acao"] == "cadastro-erro"){
+	$img = "images/error.png";
 	$texto1 = "Cadastrando Usuário";
-	$texto2 = "Erro ao cadastrar!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "cadastro.php";
-}else if($_GET["acao"] == "atualiza-sucesso"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/sucess.jpg";
+}
+
+else if($_GET["acao"] == "atualiza-sucesso"){
+	$img = "images/success.png";
 	$texto1 = "Atualizando Cadastro";
-	$texto2 = "Cadastro Atualizado com Sucesso!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "atualizaUsuario.php";
-}else if($_GET["acao"] == "atualiza-erro"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/error.jpg";
+}
+
+else if($_GET["acao"] == "atualiza-erro"){
+	$img = "images/error.png";
 	$texto1 = "Atualizando Usuário";
-	$texto2 = "Erro ao Atualizar!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "atualizaUsuario.php";
-}else if($_GET["acao"] == "exclui-sucesso"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/sucess.jpg";
+}
+
+else if($_GET["acao"] == "exclui-sucesso"){
+	$img = "images/success.png";
 	$texto1 = "Excluindo Usuário";
-	$texto2 = "Usuário Excluído com Sucesso!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "index.php";
-}else if($_GET["acao"] == "exclui-erro"){
-	$imagem1 = "images/gif-loading.gif";
-	$imagem2 = "images/error.jpg";
+}
+
+else if($_GET["acao"] == "exclui-erro"){
+	$img = "images/error.png";
 	$texto1 = "Excluindo Usuário";
-	$texto2 = "Erro ao Excluir Usuário!";
-	$texto3 = "Redirecionando<img style='padding-top: 10px' src='images/dot-loading.gif' />";
 	$redirect = "atualizaUsuario.php";
+}
+
+else if($_GET["acao"] == "cadastra-topico-sucesso"){
+	$img = "images/success.png";
+	$texto1 = "Cadastrando Tópico";
+	$redirect = "meusTopicos.php";
+}
+
+else if($_GET["acao"] == "cadastra-topico-erro"){
+	$img = "images/error.png";
+	$texto1 = "Cadastrando Tópico";
+	$redirect = "cadastraTopico.php";
+}
+
+else if($_GET["acao"] == "exclui-topico-sucesso"){
+	$img = "images/success.png";
+	$texto1 = "Excluindo Tópico";
+	$redirect = "meusTopicos.php";
+}
+
+else if($_GET["acao"] == "exclui-topico-erro"){
+	$img = "images/error.png";
+	$texto1 = "Excluindo Tópico";
+	$redirect = "cadastraTopico.php";
+}
+
+else if($_GET["acao"] == "atualiza-topico-sucesso"){
+	$img = "images/success.png";
+	$texto1 = "Atualizando Tópico";
+	$redirect = "meusTopicos.php";
+}
+
+else if($_GET["acao"] == "atualiza-topico-erro"){
+	$img = "images/error.png";
+	$texto1 = "Atualizando Tópico";
+	$redirect = "atualizaTopico.php";
+}
+
+else if($_GET["acao"] == "insere-comentario-sucesso"){
+	$img = "images/success.png";
+	$texto1 = "Inserindo Comentario";
+	$redirect = "viewTopico.php";
+}
+
+else if($_GET["acao"] == "insere-comentario-erro"){
+	$img = "images/error.png";
+	$texto1 = "Inserindo Comentario";
+	$redirect = "viewTopico.php";
 }
 ?>
 
@@ -55,23 +100,39 @@ if($_GET["acao"] == "cadastro-sucesso"){
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
-	<div class="row">
-		<div class="col-md-4 offset-md-4" style="margin-top: 13%; text-align: center">
-			<img id="imagem1" src='<?php echo $imagem1?>' />			
-			<h4 id="texto" ><?php echo $texto1?><img style="padding-top: 10px" src='images/dot-loading.gif' /></h4>		
-			<script type='text/JavaScript'>
-				setTimeout(function () {							
-					document.getElementById('imagem1').src='<?php echo $imagem2?>';
-					document.getElementById("texto").innerHTML="<?php echo $texto2?>";
-					setTimeout(function () {							
-						document.getElementById('imagem1').src='<?php echo $imagem1?>';
-						document.getElementById("texto").innerHTML="<?php echo $texto3?>";
-						setTimeout(function () {							
+	<div class="row" style="margin-top: 15%; margin-right: 36%">
+		<div class="col-md-11" style="text-align: right;">
+			<h3><?php echo $loading?></h3>
+			<h3 id="texto2"></h3>
+			<h3 id="texto3"></h3>
+			<h3 id="texto4"></h3>
+		</div>
+		<div class="col-md-1" style="text-align: left;">
+			<h3><img id="img1" src=''/></h3>
+			<h3><img id="img2" src=''/></h3>
+			<h3><img id="img3" src=''/></h3>
+			<h3><img id="img4" src=''/></h3>	
+		</div>			
+		<script type='text/JavaScript'>
+			setTimeout(function () {							
+				document.getElementById('img1').src='<?php echo $img?>';					
+				document.getElementById("texto2").innerHTML="<?php echo $access?>";
+				document.getElementById('img2').src='<?php echo $gifLoading?>';
+				setTimeout(function () {													
+					document.getElementById('img2').src='<?php echo $img?>';
+					document.getElementById("texto3").innerHTML="<?php echo $texto1?>";
+					document.getElementById('img3').src='<?php echo $gifLoading?>';
+					setTimeout(function () {													
+						document.getElementById('img3').src='<?php echo $img?>';
+						document.getElementById("texto4").innerHTML="<?php echo $redirecting?>";
+						document.getElementById('img4').src='<?php echo $gifLoading?>';
+						setTimeout(function () {													
 							window.location='<?php echo $redirect?>';
-						}, 1000);
-					}, 2000); 
-				}, 2000); 
-
+						}, 1000); 
+					}, 1000); 
+				}, 1000); 
+				
+			}, 1000); 
 			</script>
 		</div>
 	</div>

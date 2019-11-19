@@ -8,29 +8,26 @@
 </head>
 <body>
 	<?php	
-	include('conexao.php');
-	$nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+	date_default_timezone_set('America/Cuiaba');
+	include('conexao.php');	
 	$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-	$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-	$cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
-	$estado = mysqli_real_escape_string($conexao, $_POST['estado']);
-	$cep = mysqli_real_escape_string($conexao, $_POST['cep']);
-	$datanasc = mysqli_real_escape_string($conexao, $_POST['datanasc']);
-	$sexo = mysqli_real_escape_string($conexao, $_POST['sexo']);
-	$email = mysqli_real_escape_string($conexao, $_POST['email']);
+	$idAdm = mysqli_real_escape_string($conexao, $_POST['id']);
+	$categoria = mysqli_real_escape_string($conexao, $_POST['categoria']);
+	$nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+	$detalhe = mysqli_real_escape_string($conexao, $_POST['detalhe']);
+	$data = date('y-m-d H:i:s');
 
-	$query = "select usuario from usuarios where usuario = '{$usuario}'";
+	$query = "select nome from topicos where nome = '{$nome}'";
 	$result = mysqli_query($conexao, $query);
 	$row = mysqli_num_rows($result);
 
-	if($row > 0) {
-		$query = "update `usuarios` set `nome` = '{$nome}', `senha` = '{$senha}',`cidade` = '{$cidade}',`estado`  = '{$estado}',`cep` = '{$cep}',`datanasc` = '{$datanasc}',`sexo` = '{$sexo}',`email` = '{$email}' where usuario = '{$usuario}'";
-		mysqli_query($conexao, $query) or die ("<script>window.location='loading.php?acao=cadastro-erro';</script>");		
-		echo"<script>window.location='loading.php?acao=atualiza-sucesso';</script>";
-
+	if($row == 0) {
+		$query = "INSERT INTO `topicos` (`idAdm`,`categoria`,`nome`,`detalhe`,`data`) VALUES ('{$idAdm}','{$categoria}','{$nome}','{$detalhe}','{$data}')";
+		mysqli_query($conexao, $query) or die ("<script>window.location='loading.php?acao=cadastra-topico-erro';</script>");		
+		echo"<script>window.location='loading.php?acao=cadastra-topico-sucesso';</script>";
 		exit();
 	} else {
-		echo "<script>window.location='loading.php?acao=atualiza-erro';</script>";
+		echo "<script>window.location='loading.php?acao=cadastra-topico-erro';</script>";
 	}
 	?>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
